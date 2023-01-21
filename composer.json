@@ -1,0 +1,30 @@
+{
+    "name": "passionweb/form-email-contentblocks",
+    "type": "typo3-cms-extension",
+    "description": "Allows adding a content element at the beginning (introductory text) and/or at the end (email signature) of the email templates.",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Manuel Schnabel",
+            "role": "Developer"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^11.5",
+        "typo3/cms-form": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Passionweb\\FormEmailContentblocks\\": "Classes"
+        }
+    },
+    "replace": {
+        "typo3-ter/form-email-contentblocks": "self.version"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "form_email_contentblocks"
+        }
+    }
+}

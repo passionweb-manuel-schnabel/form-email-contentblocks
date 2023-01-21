@@ -1,0 +1,171 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              formEditor:
+                editors:
+                  900:
+                    selectOptions:
+                      1673535911:
+                        value: IntroductoryReceiver
+                        label: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.label
+                      1673535912:
+                        value: IntroductorySender
+                        label: formEditor.elements.Form.finisher.IntroductorySender.editor.header.label
+                      1673535913:
+                        value: SignatureReceiver
+                        label: formEditor.elements.Form.finisher.SignatureReceiver.editor.header.label
+                      1673535914:
+                        value: SignatureSender
+                        label: formEditor.elements.Form.finisher.SignatureSender.editor.header.label
+                      1673535915:
+                        value: ExtendFluidEmail
+                        label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label
+                propertyCollections:
+                  finishers:
+                    1673535911:
+                      identifier: IntroductoryReceiver
+                      editors:
+                        100:
+                          identifier: header
+                          templateName: Inspector-CollectionElementHeaderEditor
+                          label: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.label
+                          fieldExplanationText: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.fieldExplanationText
+                        200:
+                          identifier: contentElementUidHtml
+                          templateName: Inspector-Typo3WinBrowserEditor
+                          label: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentElementUid.label
+                          buttonLabel: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentElementUid.buttonLabel
+                          browsableType: tt_content
+                          iconIdentifier: mimetypes-x-content-text
+                          propertyPath: options.contentElementUidHtml
+                          propertyValidatorsMode: OR
+                          propertyValidators:
+                            10: Integer
+                            20: FormElementIdentifierWithinCurlyBracesExclusive
+                        300:
+                          identifier: contentPlaintext
+                          templateName: Inspector-TextareaEditor
+                          label: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentPlaintext.label
+                          propertyPath: options.contentPlaintext
+                          propertyValidators:
+                            10: NotEmpty
+                        9999:
+                          identifier: removeButton
+                          templateName: Inspector-RemoveElementEditor
+                    1673535912:
+                      identifier: IntroductorySender
+                      editors:
+                        100:
+                          identifier: header
+                          templateName: Inspector-CollectionElementHeaderEditor
+                          label: formEditor.elements.Form.finisher.IntroductorySender.editor.header.label
+                          fieldExplanationText: formEditor.elements.Form.finisher.IntroductorySender.editor.header.fieldExplanationText
+                        200:
+                          identifier: contentElementUidHtml
+                          templateName: Inspector-Typo3WinBrowserEditor
+                          label: formEditor.elements.Form.finisher.IntroductorySender.editor.contentElementUid.label
+                          buttonLabel: formEditor.elements.Form.finisher.IntroductorySender.editor.contentElementUid.buttonLabel
+                          browsableType: tt_content
+                          iconIdentifier: mimetypes-x-content-text
+                          propertyPath: options.contentElementUidHtml
+                          propertyValidatorsMode: OR
+                          propertyValidators:
+                            10: Integer
+                            20: FormElementIdentifierWithinCurlyBracesExclusive
+                        300:
+                          identifier: contentPlaintext
+                          templateName: Inspector-TextareaEditor
+                          label: formEditor.elements.Form.finisher.IntroductorySender.editor.contentPlaintext.label
+                          propertyPath: options.contentPlaintext
+                          propertyValidators:
+                            10: NotEmpty
+                        9999:
+                          identifier: removeButton
+                          templateName: Inspector-RemoveElementEditor
+                    1673535913:
+                      identifier: SignatureReceiver
+                      editors:
+                        100:
+                          identifier: header
+                          templateName: Inspector-CollectionElementHeaderEditor
+                          label: formEditor.elements.Form.finisher.SignatureReceiver.editor.header.label
+                          fieldExplanationText: formEditor.elements.Form.finisher.SignatureReceiver.editor.header.fieldExplanationText
+                        200:
+                          identifier: contentElementUidHtml
+                          templateName: Inspector-Typo3WinBrowserEditor
+                          label: formEditor.elements.Form.finisher.SignatureReceiver.editor.contentElementUid.label
+                          buttonLabel: formEditor.elements.Form.finisher.SignatureReceiver.editor.contentElementUid.buttonLabel
+                          browsableType: tt_content
+                          iconIdentifier: mimetypes-x-content-text
+                          propertyPath: options.contentElementUidHtml
+                          propertyValidatorsMode: OR
+                          propertyValidators:
+                            10: Integer
+                            20: FormElementIdentifierWithinCurlyBracesExclusive
+                        300:
+                          identifier: contentPlaintext
+                          templateName: Inspector-TextareaEditor
+                          label: formEditor.elements.Form.finisher.SignatureReceiver.editor.contentPlaintext.label
+                          propertyPath: options.contentPlaintext
+                          propertyValidators:
+                            10: NotEmpty
+                        9999:
+                          identifier: removeButton
+                          templateName: Inspector-RemoveElementEditor
+                    1673535914:
+                      identifier: SignatureSender
+                      editors:
+                        100:
+                          identifier: header
+                          templateName: Inspector-CollectionElementHeaderEditor
+                          label: formEditor.elements.Form.finisher.SignatureSender.editor.header.label
+                          fieldExplanationText: formEditor.elements.Form.finisher.SignatureSender.editor.header.fieldExplanationText
+                        200:
+                          identifier: contentElementUidHtml
+                          templateName: Inspector-Typo3WinBrowserEditor
+                          label: formEditor.elements.Form.finisher.SignatureSender.editor.contentElementUid.label
+                          buttonLabel: formEditor.elements.Form.finisher.SignatureSender.editor.contentElementUid.buttonLabel
+                          browsableType: tt_content
+                          iconIdentifier: mimetypes-x-content-text
+                          propertyPath: options.contentElementUidHtml
+                          propertyValidatorsMode: OR
+                          propertyValidators:
+                            10: Integer
+                            20: FormElementIdentifierWithinCurlyBracesExclusive
+                        300:
+                          identifier: contentPlaintext
+                          templateName: Inspector-TextareaEditor
+                          label: formEditor.elements.Form.finisher.SignatureSender.editor.contentPlaintext.label
+                          propertyPath: options.contentPlaintext
+                          propertyValidators:
+                            10: NotEmpty
+                        9999:
+                          identifier: removeButton
+                          templateName: Inspector-RemoveElementEditor
+                    1673535915:
+                      identifier: ExtendFluidEmail
+                      editors:
+                        100:
+                          identifier: header
+                          templateName: Inspector-CollectionElementHeaderEditor
+                          label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label
+                          fieldExplanationText: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.fieldExplanationText
+                        200:
+                          identifier: bgColor
+                          templateName: Inspector-TextEditor
+                          label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.label
+                          propertyPath: options.bgColor
+                          fieldExplanationText: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.fieldExplanationText
+                        300:
+                          identifier: logo
+                          templateName: Inspector-TextEditor
+                          label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.label
+                          propertyPath: options.logo
+                          fieldExplanationText: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText
+                        9999:
+                          identifier: removeButton
+                          templateName: Inspector-RemoveElementEditor

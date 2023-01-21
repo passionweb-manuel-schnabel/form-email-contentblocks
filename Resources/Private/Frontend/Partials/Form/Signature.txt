@@ -1,0 +1,4 @@
+<f:section name="Plaintext">
+<f:format.raw>{signatureContent}</f:format.raw>
+</f:section>
+

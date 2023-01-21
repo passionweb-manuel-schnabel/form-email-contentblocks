@@ -1,0 +1,32 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          finishersDefinition:
+            EmailToSender:
+              options:
+                layoutRootPaths:
+                  1673535916: 'EXT:form_email_contentblocks/Resources/Private/Frontend/Layouts/'
+                templateRootPaths:
+                  1673535916: 'EXT:form_email_contentblocks/Resources/Private/Frontend/Templates/Finishers/Email/'
+                partialRootPaths:
+                  1673535916: 'EXT:form_email_contentblocks/Resources/Private/Frontend/Partials/'
+            EmailToReceiver:
+              options:
+                layoutRootPaths:
+                  1673535916: 'EXT:form_email_contentblocks/Resources/Private/Frontend/Layouts/'
+                templateRootPaths:
+                  1673535916: 'EXT:form_email_contentblocks/Resources/Private/Frontend/Templates/Finishers/Email/'
+                partialRootPaths:
+                  1673535916: 'EXT:form_email_contentblocks/Resources/Private/Frontend/Partials/'
+            SignatureReceiver:
+              implementationClassName: 'Passionweb\FormEmailContentblocks\Domain\Finishers\SignatureReceiverFinisher'
+            SignatureSender:
+              implementationClassName: 'Passionweb\FormEmailContentblocks\Domain\Finishers\SignatureSenderFinisher'
+            IntroductoryReceiver:
+              implementationClassName: 'Passionweb\FormEmailContentblocks\Domain\Finishers\IntroductoryReceiverFinisher'
+            IntroductorySender:
+              implementationClassName: 'Passionweb\FormEmailContentblocks\Domain\Finishers\IntroductorySenderFinisher'
+            ExtendFluidEmail:
+              implementationClassName: 'Passionweb\FormEmailContentblocks\Domain\Finishers\ExtendFluidEmailFinisher'

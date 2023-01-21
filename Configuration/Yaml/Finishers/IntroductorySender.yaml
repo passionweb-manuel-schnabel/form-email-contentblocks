@@ -1,0 +1,33 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          finishersDefinition:
+            IntroductorySender:
+              formEditor:
+                iconIdentifier: form-finisher
+                label: formEditor.elements.Form.finisher.IntroductorySender.editor.header.label
+                predefinedDefaults:
+                  options:
+                    contentElementUidHtml: ''
+                    contentPlaintext: ''
+              FormEngine:
+                label: tt_content.finishersDefinition.IntroductorySender.label
+                elements:
+                  contentElementUidHtml:
+                    label: tt_content.finishersDefinition.IntroductorySender.contentElementUid.label
+                    config:
+                      type: group
+                      allowed: tt_content
+                      size: 1
+                      minitems: 1
+                      maxitems: 1
+                      fieldWizard:
+                        recordsOverview:
+                          disabled: 1
+                  contentPlaintext:
+                    label: tt_content.finishersDefinition.IntroductorySender.contentPlaintext.label
+                    config:
+                      type: text
+                      eval: required,trim

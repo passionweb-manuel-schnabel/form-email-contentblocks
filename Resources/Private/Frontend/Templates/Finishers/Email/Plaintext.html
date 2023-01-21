@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{finisherVariableProvider.introductory} && {finisherVariableProvider.introductory.plaintext}">
+<f:render partial="Form/Introductory" arguments="{introductoryContent: finisherVariableProvider.introductory.plaintext}" section="Plaintext"/>
+
+</f:if>
+<formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue"><f:spaceless>
+    <f:if condition="{formValue.isMultiValue}">
+        <f:then>
+            <f:if condition="{formValue.isSection}"><f:then>*** <formvh:translateElementProperty element="{formValue.element}" property="label" /> ***</f:then><f:else><formvh:translateElementProperty element="{formValue.element}" property="label" />: <f:for each="{formValue.processedValue}" as="singleValue">- {singleValue}
+            </f:for></f:else></f:if>
+        </f:then>
+        <f:else>
+            <f:if condition="{formValue.isSection}"><f:then>*** <formvh:translateElementProperty element="{formValue.element}" property="label" /> ***</f:then><f:else><formvh:translateElementProperty element="{formValue.element}" property="label" />: <f:if condition="{formValue.processedValue}"><f:then>{formValue.processedValue -> f:format.raw()}</f:then><f:else>-</f:else></f:if></f:else></f:if>
+        </f:else>
+    </f:if>
+</f:spaceless>
+</formvh:renderAllFormValues>
+<f:if condition="{finisherVariableProvider.signature} && {finisherVariableProvider.signature.plaintext}">
+
+<f:render partial="Form/Signature" arguments="{signatureContent: finisherVariableProvider.signature.plaintext}" section="Plaintext"/>
+</f:if>
+</html>

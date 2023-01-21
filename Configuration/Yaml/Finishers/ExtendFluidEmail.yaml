@@ -1,0 +1,25 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          finishersDefinition:
+            ExtendFluidEmail:
+              formEditor:
+                iconIdentifier: form-finisher
+                label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label
+                predefinedDefaults:
+                  options:
+                    bgColor: ''
+                    logo: ''
+              FormEngine:
+                label: tt_content.finishersDefinition.ExtendFluidEmail.label
+                elements:
+                  bgColor:
+                    label: tt_content.finishersDefinition.ExtendFluidEmail.bgColor.label
+                    config:
+                      type: input
+                  logo:
+                    label: tt_content.finishersDefinition.ExtendFluidEmail.logo.label
+                    config:
+                      type: input

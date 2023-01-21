@@ -1,0 +1,23 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Passionweb\FormEmailContentblocks\:
+    resource: '../Classes/*'
+
+  Passionweb\FormEmailContentblocks\Domain\Finishers\Base\ContentFinisher:
+    public: true
+
+  Passionweb\FormEmailContentblocks\Domain\Finishers\SignatureReceiverFinisher:
+    public: true
+
+  Passionweb\FormEmailContentblocks\Domain\Finishers\SignatureSenderFinisher:
+    public: true
+
+  Passionweb\FormEmailContentblocks\Domain\Finishers\IntroductoryReceiverFinisher:
+    public: true
+
+  Passionweb\FormEmailContentblocks\Domain\Finishers\IntroductorySenderFinisher:
+    public: true

@@ -1,0 +1,28 @@
+imports:
+
+ - { resource: "./FormElements/Form.yaml" }
+
+ - { resource: "./Finishers/IntroductorySender.yaml" }
+ - { resource: "./Finishers/IntroductoryReceiver.yaml" }
+ - { resource: "./Finishers/SignatureSender.yaml" }
+ - { resource: "./Finishers/SignatureReceiver.yaml" }
+ - { resource: "./Finishers/ExtendFluidEmail.yaml" }
+
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formEditor:
+            formEditorFluidConfiguration:
+              partialRootPaths:
+                20: 'EXT:form_email_contentblocks/Resources/Private/Backend/Partials/FormEditor/'
+            dynamicRequireJsModules:
+              additionalViewModelModules:
+                10: 'TYPO3/CMS/FormEmailContentblocks/Backend/FormEditor/ViewModel'
+            translationFiles:
+              1673535916: 'EXT:form_email_contentblocks/Resources/Private/Language/Database.xlf'
+
+
+
+
