@@ -1,139 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:form_email_contentblocks/Resources/Private/Language/Database.xlf" date="2016-08-21T20:15:32Z" product-name="form_email_contentblocks">
+    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:form_email_contentblocks/Resources/Private/Language/Database.xlf" date="2016-08-21T20:15:32Z" product-name="form_email_contentblocks">
      <header/>
         <body>
             <!-- INTRODUCTORY TEXT RECEIVER -->
             <trans-unit id="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.label" resname="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.label" xml:space="preserve">
                 <source>Introductory text for email to receiver</source>
+                <target>Einleitungstext für E-Mail an Empfänger</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.fieldExplanationText" resname="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.fieldExplanationText" xml:space="preserve">
                <source>Finisher must be added before EmailToReceiver finisher! Content will be added at the beginning of the email content.</source>
+               <target>Finisher muss vor EmailToReceiver Finisher hinzugefügt werden! Der Inhalt wird am Anfang des E-Mail-Inhalts hinzugefügt.</target>
            </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentElementUid.label" resname="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentElementUid.label" xml:space="preserve">
                 <source>Content element uid</source>
+                <target>Uid des Inhaltselements</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentPlaintext.label" resname="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentPlaintext.label" xml:space="preserve">
                 <source>Introductory text (for plaintext template)</source>
+                <target>Einleitungstext (für Plaintext-Format)</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentElementUid.buttonLabel" resname="formEditor.elements.Form.finisher.IntroductoryReceiver.editor.contentElementUid.buttonLabel" xml:space="preserve">
                 <source>Select content element</source>
+                <target>Inhaltselement wählen</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.IntroductoryReceiver.label" resname="tt_content.finishersDefinition.IntroductoryReceiver.label" xml:space="preserve">
                 <source>Introductory text for email to receiver</source>
+                <target>Einleitungstext für E-Mail an Empfänger</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.IntroductoryReceiver.contentElementUid.label" resname="tt_content.finishersDefinition.IntroductoryReceiver.contentElementUid.label" xml:space="preserve">
                 <source>Content element uid</source>
+                <target>Uid des Inhaltselements</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.IntroductoryReceiver.contentPlaintext.label" resname="tt_content.finishersDefinition.IntroductoryReceiver.contentPlaintext.label" xml:space="preserve">
                 <source>Introductory text (for plaintext template)</source>
+                <target>Einleitungstext (für Plaintext-Format)</target>
             </trans-unit>
 
              <!-- INTRODUCTORY TEXT SENDER -->
             <trans-unit id="formEditor.elements.Form.finisher.IntroductorySender.editor.header.label" resname="formEditor.elements.Form.finisher.IntroductorySender.editor.header.label" xml:space="preserve">
                 <source>Introductory text for email to sender</source>
+                <target>Einleitungstext für E-Mail an Absender</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.IntroductorySender.editor.header.fieldExplanationText" resname="formEditor.elements.Form.finisher.IntroductorySender.editor.header.fieldExplanationText" xml:space="preserve">
                <source>Finisher must be added before EmailToSender finisher! Content will be added at the beginning of the email content.</source>
+               <target>Finisher muss vor EmailToSender Finisher hinzugefügt werden! Der Inhalt wird am Anfang des E-Mail-Inhalts hinzugefügt.</target>
            </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.IntroductorySender.editor.contentElementUid.label" resname="formEditor.elements.Form.finisher.IntroductorySender.editor.contentElementUid.label" xml:space="preserve">
                 <source>Content element uid</source>
+                <target>Uid des Inhaltselements</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.IntroductorySender.editor.contentPlaintext.label" resname="formEditor.elements.Form.finisher.IntroductorySender.editor.contentPlaintext.label" xml:space="preserve">
                 <source>Introductory text (for plaintext template)</source>
+                <target>Einleitungstext (für Plaintext-Format)</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.IntroductorySender.editor.contentElementUid.buttonLabel" resname="formEditor.elements.Form.finisher.IntroductorySender.editor.contentElementUid.buttonLabel" xml:space="preserve">
                 <source>Select content element</source>
+                <target>Inhaltselement wählen</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.IntroductorySender.label" resname="tt_content.finishersDefinition.IntroductorySender.label" xml:space="preserve">
                 <source>Introductory text for email to sender</source>
+                <target>Einleitungstext für E-Mail an Absender</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.IntroductorySender.contentElementUid.label" resname="tt_content.finishersDefinition.IntroductorySender.contentElementUid.label" xml:space="preserve">
                 <source>Content element uid</source>
+                <target>Uid des Inhaltselements</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.IntroductorySender.contentPlaintext.label" resname="tt_content.finishersDefinition.IntroductorySender.contentPlaintext.label" xml:space="preserve">
                 <source>Introductory text (for plaintext template)</source>
+                <target>Einleitungstext (für Plaintext-Format)</target>
             </trans-unit>
 
             <!-- SIGNATURE RECEIVER -->
             <trans-unit id="formEditor.elements.Form.finisher.SignatureReceiver.editor.header.label" resname="formEditor.elements.Form.finisher.SignatureReceiver.editor.header.label" xml:space="preserve">
                 <source>Signature for email to receiver</source>
+                <target>Signatur für E-Mail an Empfänger</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.SignatureReceiver.editor.header.fieldExplanationText" resname="formEditor.elements.Form.finisher.SignatureReceiver.editor.header.fieldExplanationText" xml:space="preserve">
                <source>Finisher must be added before EmailToReceiver finisher! Content will be added at the end of the email content.</source>
+               <target>Finisher muss vor EmailToReceiver Finisher hinzugefügt werden! Der Inhalt wird am Ende des E-Mail-Inhalts hinzugefügt.</target>
            </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.SignatureReceiver.editor.contentElementUid.label" resname="formEditor.elements.Form.finisher.SignatureReceiver.editor.contentElementUid.label" xml:space="preserve">
                 <source>Content element uid</source>
+                <target>Uid des Inhaltselements</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.SignatureReceiver.editor.contentPlaintext.label" resname="formEditor.elements.Form.finisher.SignatureReceiver.editor.contentPlaintext.label" xml:space="preserve">
                 <source>Signature (for plaintext template)</source>
+                <target>Signatur (für Plaintext-Format)</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.SignatureReceiver.editor.contentElementUid.buttonLabel" resname="formEditor.elements.Form.finisher.SignatureReceiver.editor.contentElementUid.buttonLabel" xml:space="preserve">
                 <source>Select content element</source>
+                <target>Inhaltselement wählen</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.SignatureReceiver.label" resname="tt_content.finishersDefinition.SignatureReceiver.label" xml:space="preserve">
                 <source>Signature for email to receiver</source>
+                <target>Signatur für E-Mail an Empfänger</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.SignatureReceiver.contentElementUid.label" resname="tt_content.finishersDefinition.SignatureReceiver.contentElementUid.label" xml:space="preserve">
                 <source>Content element uid</source>
+                <target>Uid des Inhaltselements</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.SignatureReceiver.contentPlaintext.label" resname="tt_content.finishersDefinition.SignatureReceiver.contentPlaintext.label" xml:space="preserve">
                 <source>Signature (for plaintext template)</source>
+                <target>Signatur (für Plaintext-Format)</target>
             </trans-unit>
 
             <!-- SIGNATURE SENDER -->
             <trans-unit id="formEditor.elements.Form.finisher.SignatureSender.editor.header.label" resname="formEditor.elements.Form.finisher.SignatureSender.editor.header.label" xml:space="preserve">
                 <source>Signature for email to sender</source>
+                <target>Signatur für E-Mail an Absender</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.SignatureSender.editor.header.fieldExplanationText" resname="formEditor.elements.Form.finisher.SignatureSender.editor.header.fieldExplanationText" xml:space="preserve">
                <source>Finisher must be added before EmailToSender finisher! Content will be added at the end of the email content.</source>
+               <target>Finisher muss vor EmailToSender Finisher hinzugefügt werden! Der Inhalt wird am Ende des E-Mail-Inhalts hinzugefügt.</target>
            </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.SignatureSender.editor.contentElementUid.label" resname="formEditor.elements.Form.finisher.SignatureSender.editor.contentElementUid.label" xml:space="preserve">
                 <source>Content element uid</source>
+                <target>Uid des Inhaltselements</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.SignatureSender.editor.contentPlaintext.label" resname="formEditor.elements.Form.finisher.SignatureSender.editor.contentPlaintext.label" xml:space="preserve">
                 <source>Signature (for plaintext template)</source>
+                <target>Signatur (für Plaintext-Format)</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.SignatureSender.editor.contentElementUid.buttonLabel" resname="formEditor.elements.Form.finisher.SignatureSender.editor.contentElementUid.buttonLabel" xml:space="preserve">
                 <source>Select content element</source>
+                <target>Inhaltselement wählen</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.SignatureSender.label" resname="tt_content.finishersDefinition.SignatureSender.label" xml:space="preserve">
                 <source>Signature for email to sender</source>
+                <target>Signatur für E-Mail an Absender</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.SignatureSender.contentElementUid.label" resname="tt_content.finishersDefinition.SignatureSender.contentElementUid.label" xml:space="preserve">
                 <source>Content element uid</source>
+                <target>Uid des Inhaltselements</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.SignatureSender.contentPlaintext.label" resname="tt_content.finishersDefinition.SignatureSender.contentPlaintext.label" xml:space="preserve">
                 <source>Signature (for plaintext template)</source>
+                <target>Signatur (für Plaintext-Format)</target>
             </trans-unit>
 
             <!-- EXTEND FLUID EMAIL -->
             <trans-unit id="tt_content.finishersDefinition.ExtendFluidEmail.label" resname="tt_content.finishersDefinition.ExtendFluidEmail.label" xml:space="preserve">
                 <source>Extend FluidEmail</source>
+                <target>FluidEmail-Erweiterung</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.ExtendFluidEmail.bgColor.label" resname="tt_content.finishersDefinition.ExtendFluidEmail.bgColor.label" xml:space="preserve">
                 <source>Background color</source>
+                <target>Hintergrundfarbe</target>
             </trans-unit>
             <trans-unit id="tt_content.finishersDefinition.ExtendFluidEmail.logo.label" resname="tt_content.finishersDefinition.ExtendFluidEmail.logo.label" xml:space="preserve">
                 <source>Logo</source>
+                <target>Logo</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.label" xml:space="preserve">
                 <source>Background color</source>
+                <target>Hintergrundfarbe</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.fieldExplanationText" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.fieldExplanationText" xml:space="preserve">
                 <source>Please enter a hexadecimal color value in the format "#000000". Default value is "#ff8700". Only used if FluidEmail is enabled.</source>
+                <target>Bitte geben Sie einen hexadezimalen Farbwert im Format „#000000“ ein. Der Standardwert ist "#ff8700". Wird nur verwendet, wenn FluidEmail aktiviert ist.</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.label" xml:space="preserve">
                 <source>Logo</source>
+                <target>Logo</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText" xml:space="preserve">
                 <source>Please enter the path to the logo. E.g. "EXT:vendor_package/Resources/Public/Images/logo.jpg" or "fileadmin/user_upload/logo.jpg". Only used if FluidEmail is enabled.</source>
+                <target>Bitte geben Sie den Pfad zum Logo ein. Z.B. „EXT:vendor_package/Resources/Public/Images/logo.jpg“ oder „fileadmin/user_upload/logo.jpg“. Wird nur verwendet, wenn FluidEmail aktiviert ist.</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label" xml:space="preserve">
                <source>Extend FluidEmail</source>
+               <target>FluidEmail-Erweiterung</target>
            </trans-unit>
            <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.fieldExplanationText" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.fieldExplanationText" xml:space="preserve">
                <source>Finisher must be added before EmailToSender and/or EmailToReceiver finishers!</source>
+               <target>Der Finisher muss vor den Finishern EmailToSender und/oder EmailToReceiver hinzugefügt werden!</target>
            </trans-unit>
         </body>
     </file>
