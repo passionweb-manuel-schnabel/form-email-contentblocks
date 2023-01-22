@@ -21,8 +21,8 @@ abstract class ContentFinisher extends AbstractFinisher
     }
 
     /**
-     * @param string $key
-     * @param string $emailTo
+     * adds variable to finisherVariableProvider with generated content
+     *
      * @param string $format
      * @return void
      */
@@ -45,8 +45,10 @@ abstract class ContentFinisher extends AbstractFinisher
     {
         if($format === 'html') {
             $recordsContentObject = new RecordsContentObject($this->contentObjectRenderer);
+            // get base uri
             $baseUri = $this->finisherContext->getFormRuntime()->getRequest()->getAttribute('normalizedParams')->getSiteUrl();
             $signatureContentHtml = $recordsContentObject->render(['tables' => 'tt_content', 'source' => $this->options['contentElementUidHtml'], 'dontCheckPid' => 1]);
+            // convert available relative fileadmin paths to absolute paths
             return str_replace('/fileadmin', $baseUri.'fileadmin', $signatureContentHtml);
         } else {
             return $this->parseOption('contentPlaintext');

@@ -3,6 +3,9 @@
 namespace Passionweb\FormEmailContentblocks\Domain\Finishers;
 
 
+use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 
 class ExtendFluidEmailFinisher extends AbstractFinisher
@@ -20,11 +23,33 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
             );
         }
 
+        /**
+         * get absolute path based on entered logo path
+         */
+        $absoluteLogoPath = $this->generateAbsolutePathOfFile($this->options['logo']);
+
         $this->finisherContext->getFinisherVariableProvider()->add(
             $this->shortFinisherIdentifier,
             'logo',
-            $this->options['logo']
+            $absoluteLogoPath
         );
     }
 
+    /**
+     * @param string $logoPath
+     * @return string
+     * @throws InvalidFileException
+     */
+    private function generateAbsolutePathOfFile(string $logoPath) {
+        // entered file path is an extension path
+        if(PathUtility::isExtensionPath($logoPath)) {
+            return GeneralUtility::locationHeaderUrl(PathUtility::getPublicResourceWebPath($logoPath));
+        }
+        // entered file path is a relative fileadmin path
+        else {
+            // get base uri
+            $baseUri = $this->finisherContext->getFormRuntime()->getRequest()->getAttribute('normalizedParams')->getSiteUrl();
+            return $baseUri . "/". ltrim($logoPath, '/');
+        }
+    }
 }

@@ -358,7 +358,7 @@
                                 <td valign="top" class="image" align="center" style="padding: 0px 36px; padding-bottom: 20px; color: #222222;text-align: center;">
                                     <f:if condition="{finisherVariableProvider.ExtendFluidEmail} && {finisherVariableProvider.ExtendFluidEmail.logo}">
                                         <f:then>
-                                            <img src="{finisherVariableProvider.ExtendFluidEmail.logo -> core:normalizedUrl()}" alt="{typo3.sitename} Logo" width="150" />
+                                            <img src="{finisherVariableProvider.ExtendFluidEmail.logo}" alt="{typo3.sitename} Logo" width="150" />
                                         </f:then>
                                         <f:else if="{typo3.systemConfiguration.backend.loginHighlightColor}">
                                             <img src="{typo3.systemConfiguration.backend.loginLogo -> core:normalizedUrl()}" alt="TYPO3 Logo" height="41" width="150" />
