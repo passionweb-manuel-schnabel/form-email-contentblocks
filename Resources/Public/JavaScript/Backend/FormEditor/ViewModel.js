@@ -14,7 +14,7 @@ define(['jquery',
          * @var object
          */
         var _finishersWithFieldExplanationText = [
-            'ExtendFluidMail',
+            'ExtendFluidEmail',
             'IntroductoryReceiver',
             'IntroductorySender',
             'SignatureReceiver',
