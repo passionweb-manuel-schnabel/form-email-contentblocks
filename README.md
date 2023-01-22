@@ -6,9 +6,17 @@ Allows to add a content element at the beginning (introductory text) and/or at t
 
 - Add a content element at the beginning of the email to receiver template
 - Add a content element at the beginning of the email to sender template
+
+![Introductory text finisher for sender/receiver](./Documentation/Introduction/example-introductory-text.png)
+
 - Add a content element at the end of the email to receiver template
 - Add a content element at the end of the email to sender template
+
+![Signature text finisher for sender/receiver](./Documentation/Introduction/example-signature-text.png)
+
 - Edit the background color and logo of the fluid email template for sender and receiver
+
+![ExtendFluidEmail finisher](./Documentation/Introduction/example-extend-fluid-email.png)
 
 ## Installation
 
@@ -60,6 +68,9 @@ module.tx_form.settings.yamlConfigurations {
 
 1) Create new or edit an existing form
 2) Add the finisher(s) you want to use (and place them in the right order)
+
+![Signature finisher for sender/receiver](./Documentation/Editor/overview-added-finishers.png)
+
 3) Save the form
 
 ## Troubleshooting and logging
