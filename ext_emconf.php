@@ -6,6 +6,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'plugin',
     'author' => 'Manuel Schnabel',
     'author_email' => 'service@passionweb.de',
+    'author_company' => 'PassionWeb Manuel Schnabel',
     'state' => 'beta',
     'clearCacheOnLoad' => 0,
     'version' => '1.0.0',

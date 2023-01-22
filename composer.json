@@ -3,6 +3,7 @@
     "type": "typo3-cms-extension",
     "description": "Allows adding a content element at the beginning (introductory text) and/or at the end (email signature) of the email templates.",
     "version": "1.0.0",
+    "homepage": "https://www.passionweb.de",
     "authors": [
         {
             "name": "Manuel Schnabel",
