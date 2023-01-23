@@ -3,12 +3,14 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Form email content blocks',
     'description' => 'Allows to add a content element at the beginning (introductory text) and/or at the end (email signature) of the email templates. Also, the background color and logo of the fluid email template can be edited.',
-    'category' => 'plugin',
+    'category' => 'system',
     'author' => 'Manuel Schnabel',
     'author_email' => 'service@passionweb.de',
     'author_company' => 'PassionWeb Manuel Schnabel',
-    'state' => 'beta',
+    'state' => 'stable',
     'clearCacheOnLoad' => 0,
+    'uploadfolder' => false,
+    'createDirs' => '',
     'version' => '1.0.0',
     'constraints' => [
         'depends' => [
