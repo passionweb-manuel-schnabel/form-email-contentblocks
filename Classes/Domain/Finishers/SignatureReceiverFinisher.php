@@ -3,17 +3,13 @@
 namespace Passionweb\FormEmailContentblocks\Domain\Finishers;
 
 
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use Passionweb\FormEmailContentblocks\Domain\Finishers\Base\ContentFinisher;
 
 class SignatureReceiverFinisher extends ContentFinisher
 {
-    public function __construct(
-        ContentObjectRenderer $contentObjectRenderer
-    )
+    public function __construct()
     {
-        parent::__construct($contentObjectRenderer);
-
+        parent::__construct();
         $this->contentType = 'signature';
     }
 
@@ -22,5 +18,4 @@ class SignatureReceiverFinisher extends ContentFinisher
         $this->addFinisherVariable('html');
         $this->addFinisherVariable('plaintext');
     }
-
 }

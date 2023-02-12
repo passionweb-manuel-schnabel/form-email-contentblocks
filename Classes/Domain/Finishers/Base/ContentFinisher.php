@@ -3,30 +3,20 @@
 namespace Passionweb\FormEmailContentblocks\Domain\Finishers\Base;
 
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\RecordsContentObject;
 
 abstract class ContentFinisher extends AbstractFinisher
 {
     protected string $contentType;
 
-    protected ContentObjectRenderer $contentObjectRenderer;
-
-    public function __construct(
-        ContentObjectRenderer $contentObjectRenderer
-    )
-    {
-        $this->contentObjectRenderer = $contentObjectRenderer;
-    }
+    public function __construct() {}
 
     /**
      * adds variable to finisherVariableProvider with generated content
-     *
-     * @param string $format
-     * @return void
      */
-    protected function addFinisherVariable(string $format) {
+    protected function addFinisherVariable(string $format):void {
 
         $this->finisherContext->getFinisherVariableProvider()->add(
             $this->contentType,
@@ -37,14 +27,13 @@ abstract class ContentFinisher extends AbstractFinisher
 
     /**
      * renders the content object and set absolute path for images from fileadmin
-     *
-     * @param string $format
-     * @return string
      */
     protected function buildContent(string $format): string
     {
         if($format === 'html') {
-            $recordsContentObject = new RecordsContentObject($this->contentObjectRenderer);
+            $recordsContentObject = GeneralUtility::makeInstance(RecordsContentObject::class);
+            $recordsContentObject->setContentObjectRenderer($GLOBALS['TSFE']->cObj);
+            $recordsContentObject->setRequest($this->finisherContext->getRequest());
             // get base uri
             $baseUri = $this->finisherContext->getFormRuntime()->getRequest()->getAttribute('normalizedParams')->getSiteUrl();
             $htmlContent = $recordsContentObject->render(['tables' => 'tt_content', 'source' => $this->options['contentElementUidHtml'], 'dontCheckPid' => 1]);
@@ -57,7 +46,7 @@ abstract class ContentFinisher extends AbstractFinisher
         }
     }
 
-    protected function replaceFormVariablesWithUserInputs($content) {
+    protected function replaceFormVariablesWithUserInputs(string $content):string {
         $formValues = $this->finisherContext->getFormRuntime()->getFormState()->getFormValues();
         foreach($formValues as $key => $value) {
             $content = str_replace("{".$key."}", $value, $content);

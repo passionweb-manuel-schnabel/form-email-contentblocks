@@ -4,16 +4,12 @@ namespace Passionweb\FormEmailContentblocks\Domain\Finishers;
 
 
 use Passionweb\FormEmailContentblocks\Domain\Finishers\Base\ContentFinisher;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 class IntroductorySenderFinisher extends ContentFinisher
 {
-    public function __construct(
-        ContentObjectRenderer $contentObjectRenderer
-    )
+    public function __construct()
     {
-        parent::__construct($contentObjectRenderer);
-
+        parent::__construct();
         $this->contentType = 'introductory';
     }
 
@@ -22,5 +18,4 @@ class IntroductorySenderFinisher extends ContentFinisher
         $this->addFinisherVariable('html');
         $this->addFinisherVariable('plaintext');
     }
-
 }
