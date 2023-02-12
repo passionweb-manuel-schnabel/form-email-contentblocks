@@ -31,6 +31,8 @@ Add via composer:
 
 This extension provides additional finishers for the TYPO3 system extension "Form" ([EXT:form](https://docs.typo3.org/c/typo3/cms-form/11.5/en-us/Index.html "EXT:form")). In order for this extension to work as desired, the extension must be installed and configured correctly.
 
+Since version 1.1.0 it is possible to [use form variables in the content elements](#add-form-variables-to-content-elements).
+
 Following finishers are available:
 
  - `IntroductoryReceiverFinisher` (Adds a content element at the beginning of the email to receiver template)
@@ -72,6 +74,12 @@ module.tx_form.settings.yamlConfigurations {
 ![Signature finisher for sender/receiver](./Documentation/Editor/overview-added-finishers.png)
 
 3) Save the form
+
+## Add form variables to content elements
+
+Since version 1.1.0 it is possible to use form variables in the content elements or the text fields for the plaintext. You can use it in the same way as in the finisher configurations.
+
+![Form variables in content element](./Documentation/Editor/form-variables-in-content-element.png)
 
 ## Troubleshooting and logging
 
