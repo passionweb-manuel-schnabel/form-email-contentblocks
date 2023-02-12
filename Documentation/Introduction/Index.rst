@@ -23,6 +23,8 @@ Features
 
 .. figure:: example-extend-fluid-email.png
 
+- Set form variables that are automatically replaced with the sender's data in the email templates (since version 1.1.0)
+
 What does this extension do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

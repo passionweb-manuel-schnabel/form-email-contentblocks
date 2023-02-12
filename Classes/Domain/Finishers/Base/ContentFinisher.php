@@ -47,11 +47,21 @@ abstract class ContentFinisher extends AbstractFinisher
             $recordsContentObject = new RecordsContentObject($this->contentObjectRenderer);
             // get base uri
             $baseUri = $this->finisherContext->getFormRuntime()->getRequest()->getAttribute('normalizedParams')->getSiteUrl();
-            $signatureContentHtml = $recordsContentObject->render(['tables' => 'tt_content', 'source' => $this->options['contentElementUidHtml'], 'dontCheckPid' => 1]);
+            $htmlContent = $recordsContentObject->render(['tables' => 'tt_content', 'source' => $this->options['contentElementUidHtml'], 'dontCheckPid' => 1]);
             // convert available relative fileadmin paths to absolute paths
-            return str_replace('/fileadmin', $baseUri.'fileadmin', $signatureContentHtml);
+            $htmlContent = str_replace('/fileadmin', $baseUri.'fileadmin', $htmlContent);
+
+            return $this->replaceFormVariablesWithUserInputs($htmlContent);
         } else {
-            return $this->parseOption('contentPlaintext');
+            return $this->replaceFormVariablesWithUserInputs($this->parseOption('contentPlaintext'));
         }
+    }
+
+    protected function replaceFormVariablesWithUserInputs($content) {
+        $formValues = $this->finisherContext->getFormRuntime()->getFormState()->getFormValues();
+        foreach($formValues as $key => $value) {
+            $content = str_replace("{".$key."}", $value, $content);
+        }
+        return $content;
     }
 }
