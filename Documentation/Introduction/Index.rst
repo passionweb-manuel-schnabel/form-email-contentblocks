@@ -61,4 +61,10 @@ This extension does not override any of the default EXT:form finisher classes, a
 
 But the default email templates are overwritten. If you use several extensions that overwrite the default email templates of EXT:form, conflicts can arise.
 
+Achieving more together or Feedback, Feedback, Feedback
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I'm grateful for any feedback! Be it suggestions for improvement, extension requests or just a (constructive) feedback on how good or crappy the extension is.
+
+Feel free to send me your feedback to `service@passionweb.de <mailto:service@passionweb.de>`_ or `contact me on Slack <https://typo3.slack.com/team/U02FG49J4TG>`_
 
