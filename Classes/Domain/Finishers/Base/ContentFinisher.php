@@ -49,7 +49,9 @@ abstract class ContentFinisher extends AbstractFinisher
     protected function replaceFormVariablesWithUserInputs(string $content):string {
         $formValues = $this->finisherContext->getFormRuntime()->getFormState()->getFormValues();
         foreach($formValues as $key => $value) {
-            $content = str_replace("{".$key."}", $value, $content);
+            if (gettype($value) === "string") {
+                $content = str_replace("{".$key."}", $value, $content);
+            }
         }
         return $content;
     }
