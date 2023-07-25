@@ -31,3 +31,5 @@ TYPO3:
                     config:
                       type: text
                       eval: required,trim
+                translationFiles:
+                  1673535916: 'EXT:form_email_contentblocks/Resources/Private/Language/Database.xlf'
