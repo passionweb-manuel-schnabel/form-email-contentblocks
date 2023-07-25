@@ -23,3 +23,5 @@ TYPO3:
                     label: tt_content.finishersDefinition.ExtendFluidEmail.logo.label
                     config:
                       type: input
+                translationFiles:
+                  1673535916: 'EXT:form_email_contentblocks/Resources/Private/Language/Database.xlf'
