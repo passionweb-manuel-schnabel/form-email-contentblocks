@@ -17,9 +17,9 @@ TYPO3:
             formEditorFluidConfiguration:
               partialRootPaths:
                 20: 'EXT:form_email_contentblocks/Resources/Private/Backend/Partials/FormEditor/'
-            dynamicRequireJsModules:
+            dynamicJavaScriptModules:
               additionalViewModelModules:
-                10: 'TYPO3/CMS/FormEmailContentblocks/Backend/FormEditor/ViewModel'
+                1673535916: '@passionweb/form-email-contentblocks/backend/form-editor/view-model.js'
             translationFiles:
               1673535916: 'EXT:form_email_contentblocks/Resources/Private/Language/Database.xlf'
 
