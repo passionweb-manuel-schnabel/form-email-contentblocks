@@ -2,7 +2,6 @@
 
 namespace Passionweb\FormEmailContentblocks\Domain\Finishers\Base;
 
-
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -11,11 +10,6 @@ abstract class ContentFinisher extends AbstractFinisher
 {
     protected string $contentType;
 
-    public function __construct() {}
-
-    /**
-     * adds variable to finisherVariableProvider with generated content
-     */
     protected function addFinisherVariable(string $format):void {
 
         $this->finisherContext->getFinisherVariableProvider()->add(
@@ -25,9 +19,6 @@ abstract class ContentFinisher extends AbstractFinisher
         );
     }
 
-    /**
-     * renders the content object and set absolute path for images from fileadmin
-     */
     protected function buildContent(string $format): string
     {
         if($format === 'html') {
@@ -40,18 +31,15 @@ abstract class ContentFinisher extends AbstractFinisher
                 ]
             ];
             $htmlContent = $cObj->cObjGetSingle('CONTENT', $conf);
-            // get base uri
             $baseUri = $this->finisherContext->getFormRuntime()->getRequest()->getAttribute('normalizedParams')->getSiteUrl();
-            // convert available relative fileadmin paths to absolute paths
             $htmlContent = str_replace('/fileadmin', $baseUri.'fileadmin', $htmlContent);
-
             return $this->replaceFormVariablesWithUserInputs($htmlContent);
         } else {
             return $this->replaceFormVariablesWithUserInputs($this->parseOption('contentPlaintext'));
         }
     }
 
-    protected function replaceFormVariablesWithUserInputs(string $content):string {
+    protected function replaceFormVariablesWithUserInputs(string $content): string {
         $formValues = $this->finisherContext->getFormRuntime()->getFormState()->getFormValues();
         foreach($formValues as $key => $value) {
             if (gettype($value) === "string") {

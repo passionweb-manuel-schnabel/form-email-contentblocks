@@ -9,11 +9,10 @@ class SignatureSenderFinisher extends ContentFinisher
 {
     public function __construct()
     {
-        parent::__construct();
         $this->contentType = 'signature';
     }
 
-    protected function executeInternal()
+    protected function executeInternal(): void
     {
         $this->addFinisherVariable('html');
         $this->addFinisherVariable('plaintext');
