@@ -1,5 +1,3 @@
-# Extend EXT:form configuration
-
 plugin.tx_form.settings.yamlConfigurations {
 	1673535916 = EXT:form_email_contentblocks/Configuration/Yaml/BaseSetup.yaml
 }
