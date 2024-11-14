@@ -51,10 +51,9 @@ For each finisher, the corresponding notes are also displayed in the header of t
 
 ## Extension configuration (TypoScript)
 
-All necessary configurations are read in using the [ext\_typoscript\_setup.typoscript](./ext_typoscript_setup.typoscript) file.
+All necessary configurations are read in using the `ExtensionManagementUtiltity:addTypoScript()` function within `ext_tables.php`.
 
 ```
-
 plugin.tx_form.settings.yamlConfigurations {
     1673535916 = EXT:form_email_contentblocks/Configuration/Yaml/BaseSetup.yaml
 }
@@ -63,7 +62,6 @@ module.tx_form.settings.yamlConfigurations {
     1673535916 = EXT:form_email_contentblocks/Configuration/Yaml/BaseSetup.yaml
     1673535917 = EXT:form_email_contentblocks/Configuration/Yaml/FormEditorSetup.yaml
 }
-
 ```
 
 ## How editors can/should use the extension

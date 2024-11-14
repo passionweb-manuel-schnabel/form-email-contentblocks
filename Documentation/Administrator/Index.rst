@@ -27,7 +27,7 @@ Add via composer.json:
 Extension configuration (TypoScript)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All necessary configurations are read in using the [ext\_typoscript\_setup.typoscript](./ext_typoscript_setup.typoscript) file.
+All necessary configurations are read in using the `ExtensionManagementUtiltity:addTypoScript()` function within `ext_tables.php`.
 
 .. code-block:: javascript
 
