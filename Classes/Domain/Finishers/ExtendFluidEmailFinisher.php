@@ -13,21 +13,23 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
 {
     protected function executeInternal(): void
     {
-        if(ctype_xdigit(substr($this->options['bgColor'], 1)) && (strlen($this->options['bgColor']) === 4 || strlen($this->options['bgColor']) === 7)) {
+        $bgColor = $this->options['bgColor'] ?? '';
+        if(ctype_xdigit(substr($bgColor, 1)) && (strlen($bgColor) === 4 || strlen($bgColor) === 7)) {
             $this->finisherContext->getFinisherVariableProvider()->add(
                 $this->shortFinisherIdentifier,
                 'backgroundColor',
                 $this->options['bgColor']
             );
         }
-
-        $absoluteLogoPath = $this->generateAbsolutePathOfFile($this->options['logo']);
-        $this->finisherContext->getFinisherVariableProvider()->add(
-            $this->shortFinisherIdentifier,
-            'logo',
-            $absoluteLogoPath
-        );
-
+        $logoPath = $this->options['logo'] ?? '';
+        $absoluteLogoPath = $this->generateAbsolutePathOfFile($logoPath);
+        if(empty($absoluteLogoPath)) {
+            $this->finisherContext->getFinisherVariableProvider()->add(
+                $this->shortFinisherIdentifier,
+                'logo',
+                $absoluteLogoPath
+            );
+        }
         $this->finisherContext->getFinisherVariableProvider()->add(
             $this->shortFinisherIdentifier,
             'showCopyright',
