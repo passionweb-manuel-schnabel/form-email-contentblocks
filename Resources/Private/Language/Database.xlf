@@ -117,6 +117,9 @@
             <trans-unit id="tt_content.finishersDefinition.ExtendFluidEmail.logo.label" resname="tt_content.finishersDefinition.ExtendFluidEmail.logo.label" xml:space="preserve">
                 <source>Logo</source>
             </trans-unit>
+            <trans-unit id="tt_content.finishersDefinition.ExtendFluidEmail.showCopyright.label" resname="tt_content.finishersDefinition.ExtendFluidEmail.showCopyright.label" xml:space="preserve">
+                <source>Show copyright notice in email footer</source>
+            </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.label" xml:space="preserve">
                 <source>Background color</source>
             </trans-unit>
@@ -128,6 +131,9 @@
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText" xml:space="preserve">
                 <source>Please enter the path to the logo. E.g. "EXT:vendor_package/Resources/Public/Images/logo.jpg" or "fileadmin/user_upload/logo.jpg". Only used if FluidEmail is enabled.</source>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.showCopyright.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.showCopyright.label" xml:space="preserve">
+                <source>Show copyright notice in email footer</source>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label" xml:space="preserve">
                <source>Extend FluidEmail</source>

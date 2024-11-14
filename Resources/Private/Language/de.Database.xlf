@@ -152,6 +152,10 @@
                 <source>Logo</source>
                 <target>Logo</target>
             </trans-unit>
+            <trans-unit id="tt_content.finishersDefinition.ExtendFluidEmail.showCopyright.label" resname="tt_content.finishersDefinition.ExtendFluidEmail.showCopyright.label" xml:space="preserve">
+                <source>Show copyright notice in email footer</source>
+                <target>Copyright-Hinweis in der Fußzeile der E-Mail anzeigen</target>
+            </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.label" xml:space="preserve">
                 <source>Background color</source>
                 <target>Hintergrundfarbe</target>
@@ -167,6 +171,10 @@
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText" xml:space="preserve">
                 <source>Please enter the path to the logo. E.g. "EXT:vendor_package/Resources/Public/Images/logo.jpg" or "fileadmin/user_upload/logo.jpg". Only used if FluidEmail is enabled.</source>
                 <target>Bitte geben Sie den Pfad zum Logo ein. Z.B. „EXT:vendor_package/Resources/Public/Images/logo.jpg“ oder „fileadmin/user_upload/logo.jpg“. Wird nur verwendet, wenn FluidEmail aktiviert ist.</target>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.showCopyright.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.showCopyright.label" xml:space="preserve">
+                <source>Show copyright notice in email footer</source>
+                <target>Copyright-Hinweis in der Fußzeile der E-Mail anzeigen</target>
             </trans-unit>
             <trans-unit id="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label" resname="formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label" xml:space="preserve">
                <source>Extend FluidEmail</source>
