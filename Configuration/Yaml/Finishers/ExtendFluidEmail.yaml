@@ -11,7 +11,8 @@ TYPO3:
                 predefinedDefaults:
                   options:
                     bgColor: ''
-                    logo: ''
+                    logo: '',
+                    showCopyright: false
               FormEngine:
                 label: tt_content.finishersDefinition.ExtendFluidEmail.label
                 elements:
@@ -23,5 +24,9 @@ TYPO3:
                     label: tt_content.finishersDefinition.ExtendFluidEmail.logo.label
                     config:
                       type: input
+                  showCopyright:
+                    label: tt_content.finishersDefinition.ExtendFluidEmail.showCopyright.label
+                    config:
+                      type: checkbox
                 translationFiles:
                   1673535916: 'EXT:form_email_contentblocks/Resources/Private/Language/Database.xlf'

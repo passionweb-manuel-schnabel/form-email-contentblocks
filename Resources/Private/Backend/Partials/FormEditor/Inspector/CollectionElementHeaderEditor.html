@@ -1,8 +1,17 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
-<div class="t3-form-validator-editor">
-    <h4 data-template-property="header-label">
-        <span data-template-property="label"></span>
-    </h4>
-    <span class="inspector-editor-hint m-1 bg-info" data-template-property="fieldExplanationText" style="display: none"></span>
-</div>
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<h3 class="panel-heading">
+    <div class="panel-heading-row" data-template-property="panel-heading-row">
+        <div class="panel-icon" data-template-property="panel-icon"></div>
+        <div class="panel-title" data-template-property="panel-title"></div>
+    </div>
+    <div class="inspector-editor-hint mt-3 p-2 border border-black rounded-3" style="display: none">
+        <core:icon identifier="actions-exclamation-circle" size="small" />
+        <span class="text-white fw-bold px-2" data-template-property="fieldExplanationText"></span>
+    </div>
+</h3>
 </html>

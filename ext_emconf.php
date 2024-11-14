@@ -8,14 +8,11 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'service@passionweb.de',
     'author_company' => 'PassionWeb Manuel Schnabel',
     'state' => 'stable',
-    'clearCacheOnLoad' => 0,
-    'uploadfolder' => false,
-    'createDirs' => '',
-    'version' => '1.1.4',
+    'version' => '3.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-11.5.99',
-            'form' => '11.5.0-11.5.99',
+            'typo3' => '13.0.0-13.4.99',
+            'form' => '13.0.0-13.4.99',
         ],
         'conflicts' => [],
         'suggests' => [],

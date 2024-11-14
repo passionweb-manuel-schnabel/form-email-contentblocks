@@ -166,6 +166,11 @@ TYPO3:
                           label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.label
                           propertyPath: options.logo
                           fieldExplanationText: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText
+                        400:
+                          identifier: showCopyright
+                          templateName: Inspector-CheckboxEditor
+                          label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.showCopyright.label
+                          propertyPath: options.showCopyright
                         9999:
                           identifier: removeButton
                           templateName: Inspector-RemoveElementEditor
