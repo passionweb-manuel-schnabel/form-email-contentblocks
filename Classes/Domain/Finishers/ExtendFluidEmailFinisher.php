@@ -23,7 +23,7 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
         }
         $logoPath = $this->options['logo'] ?? '';
         $absoluteLogoPath = $this->generateAbsolutePathOfFile($logoPath);
-        if(empty($absoluteLogoPath)) {
+        if(!empty($absoluteLogoPath)) {
             $this->finisherContext->getFinisherVariableProvider()->add(
                 $this->shortFinisherIdentifier,
                 'logo',
