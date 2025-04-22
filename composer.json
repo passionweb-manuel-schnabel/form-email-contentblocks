@@ -2,7 +2,7 @@
     "name": "passionweb/form-email-contentblocks",
     "type": "typo3-cms-extension",
     "description": "Allows adding a content element at the beginning (introductory text) and/or at the end (email signature) of the email templates. Also, the background color and logo of the fluid email template can be edited.",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "homepage": "https://www.passionweb.de",
     "authors": [
         {
