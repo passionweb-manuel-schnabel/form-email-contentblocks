@@ -10,5 +10,5 @@
                edit-on-github-branch="latest" edit-on-github="passionweb-manuel-schnabel/form-email-contentblocks"
                typo3-core-preferred="stable"
                interlink-shortcode="passionweb/form-email-contentblocks"/>
-    <project title="Form email contentblocks" release="3.0.2" version="3.0" copyright="2024"/>
+    <project title="Form email contentblocks" release="3.0.3" version="3.0" copyright="2024"/>
 </guides>
