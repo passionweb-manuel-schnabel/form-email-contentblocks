@@ -55,8 +55,38 @@ function subscribeEvents(formEditorApp) {
                     .getTemplatePropertyDomElement('fieldExplanationText', args[1])
                     .text(args[0]['fieldExplanationText']);
 
-                document.querySelector('div[data-finisher-identifier="'+args[2]+'"] .t3-form-inspector-finishers-editor-header .inspector-editor-hint')
-                    .style.display = 'flex';
+                setTimeout(function() {
+                    const finisherElement = document.querySelector('div[data-finisher-identifier="'+args[2]+'"]');
+                    if (finisherElement) {
+                        const panelHeadingRow = finisherElement.querySelector('.panel-heading-row');
+
+                        let removeButtonElement = finisherElement.querySelector('.formeditor-inspector-element-remove-button');
+
+                        if (panelHeadingRow && removeButtonElement && !panelHeadingRow.querySelector('.panel-actions')) {
+                            const panelActionsDiv = document.createElement('div');
+                            panelActionsDiv.classList.add('panel-actions');
+
+                            const buttonElement = removeButtonElement.tagName === 'BUTTON' ? removeButtonElement : removeButtonElement.querySelector('button');
+                            if (buttonElement) {
+                                buttonElement.classList.add('btn-sm');
+                                const btnLabel = buttonElement.querySelector('.btn-label');
+                                if (btnLabel) {
+                                    btnLabel.classList.add('visually-hidden');
+                                }
+                                panelActionsDiv.appendChild(buttonElement);
+                                panelHeadingRow.appendChild(panelActionsDiv);
+
+                                if (removeButtonElement !== buttonElement) {
+                                    removeButtonElement.remove();
+                                }
+                            }
+                        }
+                        const hintElement = finisherElement.querySelector('.inspector-editor-hint');
+                        if (hintElement) {
+                            hintElement.style.display = 'flex';
+                        }
+                    }
+                }, 100);
             } else {
                 getHelper(formEditorApp)
                     .getTemplatePropertyDomElement('fieldExplanationText', args[1])
