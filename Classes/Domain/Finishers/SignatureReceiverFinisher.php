@@ -9,7 +9,7 @@ class SignatureReceiverFinisher extends ContentFinisher
 {
     public function __construct()
     {
-        $this->contentType = 'signature';
+        $this->contentType = 'signatureEmailToReceiver';
     }
 
     protected function executeInternal(): void

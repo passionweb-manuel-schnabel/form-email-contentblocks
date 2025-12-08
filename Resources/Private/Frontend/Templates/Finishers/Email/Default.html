@@ -1,9 +1,17 @@
 <f:layout name="SystemEmail" />
 <f:section name="Title">{title}</f:section>
 <f:section name="Main">
-    <f:if condition="{finisherVariableProvider.introductory} && {finisherVariableProvider.introductory.html}">
-        <f:render partial="Form/Introductory" arguments="{introductoryContent: finisherVariableProvider.introductory.html}" section="Html"/>
-        <br />
+    <f:if condition="{form.currentFinisher.finisherIdentifier} == 'EmailToSender'">
+        <f:if condition="{finisherVariableProvider.introductoryEmailToSender} && {finisherVariableProvider.introductoryEmailToSender.html}">
+            <f:render partial="Form/Introductory" arguments="{introductoryContent: finisherVariableProvider.introductoryEmailToSender.html}" section="Html"/>
+            <br />
+        </f:if>
+    </f:if>
+    <f:if condition="{form.currentFinisher.finisherIdentifier} == 'EmailToReceiver'">
+        <f:if condition="{finisherVariableProvider.introductoryEmailToReceiver} && {finisherVariableProvider.introductoryEmailToReceiver.html}">
+            <f:render partial="Form/Introductory" arguments="{introductoryContent: finisherVariableProvider.introductoryEmailToReceiver.html}" section="Html"/>
+            <br />
+        </f:if>
     </f:if>
     <table width="600">
         <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
@@ -46,8 +54,16 @@
             </tr>
         </formvh:renderAllFormValues>
     </table>
-    <f:if condition="{finisherVariableProvider.signature} && {finisherVariableProvider.signature.html}">
-        <br />
-        <f:render partial="Form/Signature" arguments="{signatureContent: finisherVariableProvider.signature.html}" section="Html"/>
+    <f:if condition="{form.currentFinisher.finisherIdentifier} == 'EmailToSender'">
+        <f:if condition="{finisherVariableProvider.signatureEmailToSender} && {finisherVariableProvider.signatureEmailToSender.html}">
+            <br />
+            <f:render partial="Form/Signature" arguments="{signatureContent: finisherVariableProvider.signatureEmailToSender.html}" section="Html"/>
+        </f:if>
+    </f:if>
+    <f:if condition="{form.currentFinisher.finisherIdentifier} == 'EmailToReceiver'">
+        <f:if condition="{finisherVariableProvider.signatureEmailToReceiver} && {finisherVariableProvider.signatureEmailToReceiver.html}">
+            <br />
+            <f:render partial="Form/Signature" arguments="{signatureContent: finisherVariableProvider.signatureEmailToReceiver.html}" section="Html"/>
+        </f:if>
     </f:if>
 </f:section>
