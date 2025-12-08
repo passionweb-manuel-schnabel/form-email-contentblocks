@@ -9,7 +9,7 @@ class IntroductoryReceiverFinisher extends ContentFinisher
 {
     public function __construct()
     {
-        $this->contentType = 'introductory';
+        $this->contentType = 'introductoryEmailToReceiver';
     }
 
     protected function executeInternal(): void

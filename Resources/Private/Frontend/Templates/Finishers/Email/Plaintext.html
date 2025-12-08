@@ -1,7 +1,15 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{finisherVariableProvider.introductory} && {finisherVariableProvider.introductory.plaintext}">
-<f:render partial="Form/Introductory" arguments="{introductoryContent: finisherVariableProvider.introductory.plaintext}" section="Plaintext"/>
+<f:if condition="{form.currentFinisher.finisherIdentifier} == 'EmailToSender'">
+    <f:if condition="{finisherVariableProvider.introductoryEmailToSender} && {finisherVariableProvider.introductoryEmailToSender.plaintext}">
+        <f:render partial="Form/Introductory" arguments="{introductoryContent: finisherVariableProvider.introductoryEmailToSender.plaintext}" section="Plaintext"/>
 
+    </f:if>
+</f:if>
+<f:if condition="{form.currentFinisher.finisherIdentifier} == 'EmailToReceiver'">
+    <f:if condition="{finisherVariableProvider.introductoryEmailToReceiver} && {finisherVariableProvider.introductoryEmailToReceiver.plaintext}">
+        <f:render partial="Form/Introductory" arguments="{introductoryContent: finisherVariableProvider.introductoryEmailToReceiver.plaintext}" section="Plaintext"/>
+
+    </f:if>
 </f:if>
 <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue"><f:spaceless>
     <f:if condition="{formValue.isMultiValue}">
@@ -15,8 +23,16 @@
     </f:if>
 </f:spaceless>
 </formvh:renderAllFormValues>
-<f:if condition="{finisherVariableProvider.signature} && {finisherVariableProvider.signature.plaintext}">
+<f:if condition="{form.currentFinisher.finisherIdentifier} == 'EmailToSender'">
+    <f:if condition="{finisherVariableProvider.signatureEmailToSender} && {finisherVariableProvider.signatureEmailToSender.plaintext}">
 
-<f:render partial="Form/Signature" arguments="{signatureContent: finisherVariableProvider.signature.plaintext}" section="Plaintext"/>
+        <f:render partial="Form/Signature" arguments="{signatureContent: finisherVariableProvider.signatureEmailToSender.plaintext}" section="Plaintext"/>
+    </f:if>
+</f:if>
+<f:if condition="{form.currentFinisher.finisherIdentifier} == 'EmailToReceiver'">
+    <f:if condition="{finisherVariableProvider.signatureEmailToReceiver} && {finisherVariableProvider.signatureEmailToReceiver.plaintext}">
+
+        <f:render partial="Form/Signature" arguments="{signatureContent: finisherVariableProvider.signatureEmailToReceiver.plaintext}" section="Plaintext"/>
+    </f:if>
 </f:if>
 </html>
