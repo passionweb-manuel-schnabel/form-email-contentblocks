@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Passionweb\FormEmailContentblocks\Domain\Finishers;
 
-
-use TYPO3\CMS\Core\Log\LogManager;
-use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
@@ -14,7 +13,7 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
     protected function executeInternal(): void
     {
         $bgColor = $this->options['bgColor'] ?? '';
-        if(ctype_xdigit(substr($bgColor, 1)) && (strlen($bgColor) === 4 || strlen($bgColor) === 7)) {
+        if (ctype_xdigit(substr($bgColor, 1)) && (strlen($bgColor) === 4 || strlen($bgColor) === 7)) {
             $this->finisherContext->getFinisherVariableProvider()->add(
                 $this->shortFinisherIdentifier,
                 'backgroundColor',
@@ -23,7 +22,7 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
         }
         $logoPath = $this->options['logo'] ?? '';
         $absoluteLogoPath = $this->generateAbsolutePathOfFile($logoPath);
-        if(!empty($absoluteLogoPath)) {
+        if (!empty($absoluteLogoPath)) {
             $this->finisherContext->getFinisherVariableProvider()->add(
                 $this->shortFinisherIdentifier,
                 'logo',
@@ -39,17 +38,17 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
 
     private function generateAbsolutePathOfFile(string $logoPath): string
     {
-        try {
-            if(PathUtility::isExtensionPath($logoPath)) {
-                return GeneralUtility::locationHeaderUrl(PathUtility::getPublicResourceWebPath($logoPath));
-            } else {
-                $baseUri = $this->finisherContext->getFormRuntime()->getRequest()->getAttribute('normalizedParams')->getSiteUrl();
-                return $baseUri . "/". ltrim($logoPath, '/');
-            }
-        } catch (InvalidFileException $e) {
-            $logger = GeneralUtility::makeInstance(LogManager::class)->getLogger(__CLASS__);
-            $logger->error($e->getMessage());
+        if ($logoPath === '') {
             return '';
         }
+
+        $request = $this->finisherContext->getRequest();
+
+        if (PathUtility::isExtensionPath($logoPath)) {
+            return GeneralUtility::locationHeaderUrl(PathUtility::getAbsoluteWebPath($logoPath), $request);
+        }
+
+        $baseUri = $request->getAttribute('normalizedParams')->getSiteUrl();
+        return rtrim($baseUri, '/') . '/' . ltrim($logoPath, '/');
     }
 }
