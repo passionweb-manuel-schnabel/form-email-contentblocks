@@ -51,9 +51,11 @@ function subscribeEvents(formEditorApp) {
     getPublisherSubscriber(formEditorApp).subscribe('view/inspector/editor/insert/perform', function (topics, args) {
         if (args[2] && args[3] && finishersWithFieldExplanationText.includes(args[2]) && args[3] === 'finishers') {
             if (getUtility(formEditorApp).isNonEmptyString(args[0]['fieldExplanationText'])) {
-                getHelper(formEditorApp)
-                    .getTemplatePropertyDomElement('fieldExplanationText', args[1])
-                    .text(args[0]['fieldExplanationText']);
+                const fieldExplanationElement = getHelper(formEditorApp)
+                    .getTemplatePropertyElement('fieldExplanationText', args[1]);
+                if (fieldExplanationElement) {
+                    fieldExplanationElement.textContent = args[0]['fieldExplanationText'];
+                }
 
                 setTimeout(function() {
                     const finisherElement = document.querySelector('div[data-finisher-identifier="'+args[2]+'"]');
@@ -89,8 +91,8 @@ function subscribeEvents(formEditorApp) {
                 }, 100);
             } else {
                 getHelper(formEditorApp)
-                    .getTemplatePropertyDomElement('fieldExplanationText', args[1])
-                    .remove();
+                    .getTemplatePropertyElement('fieldExplanationText', args[1])
+                    ?.remove();
             }
         }
     });
