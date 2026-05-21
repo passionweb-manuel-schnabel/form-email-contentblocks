@@ -53,22 +53,25 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
 
         if (PathUtility::isExtensionPath($logoPath)) {
             $webPath = PathUtility::getPublicResourceWebPath($logoPath);
-            return $webPath === '' ? '' : $this->getSiteOrigin($request) . '/' . ltrim($webPath, '/');
+            return $webPath === '' ? '' : $this->getSiteOrigin($request) . '/' . $this->encodePathSegments(ltrim($webPath, '/'));
         }
 
         if (PathUtility::hasProtocolAndScheme($logoPath)) {
             return $logoPath;
         }
 
-        $falPublicUrl = $this->resolveFalPublicUrl($logoPath);
-        if ($falPublicUrl !== null) {
+        if ($this->looksLikeFalReference($logoPath)) {
+            $falPublicUrl = $this->resolveFalPublicUrl($logoPath);
+            if ($falPublicUrl === null || $falPublicUrl === '') {
+                return '';
+            }
             if (PathUtility::hasProtocolAndScheme($falPublicUrl)) {
                 return $falPublicUrl;
             }
             $logoPath = $falPublicUrl;
         }
 
-        return rtrim($this->getSiteBaseUrl($request), '/') . '/' . ltrim($logoPath, '/');
+        return rtrim($this->getSiteBaseUrl($request), '/') . '/' . $this->encodePathSegments(ltrim($logoPath, '/'));
     }
 
     /**
@@ -106,6 +109,14 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
         return $normalizedParams instanceof NormalizedParams ? $normalizedParams->getSiteUrl() : '';
     }
 
+    private function looksLikeFalReference(string $logoPath): bool
+    {
+        return str_starts_with($logoPath, 't3://')
+            || str_starts_with($logoPath, 'file:')
+            || MathUtility::canBeInterpretedAsInteger($logoPath)
+            || preg_match('/^\d+:/', $logoPath) === 1;
+    }
+
     private function resolveFalPublicUrl(string $logoPath): ?string
     {
         try {
@@ -115,17 +126,15 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
                 return $file instanceof FileInterface ? $file->getPublicUrl() : null;
             }
 
-            if (str_starts_with($logoPath, 'file:')
-                || MathUtility::canBeInterpretedAsInteger($logoPath)
-                || preg_match('/^\d+:/', $logoPath) === 1
-            ) {
-                $file = GeneralUtility::makeInstance(ResourceFactory::class)->retrieveFileOrFolderObject($logoPath);
-                return $file instanceof FileInterface ? $file->getPublicUrl() : null;
-            }
+            $file = GeneralUtility::makeInstance(ResourceFactory::class)->retrieveFileOrFolderObject($logoPath);
+            return $file instanceof FileInterface ? $file->getPublicUrl() : null;
         } catch (\Throwable) {
             return null;
         }
+    }
 
-        return null;
+    private function encodePathSegments(string $path): string
+    {
+        return implode('/', array_map('rawurlencode', explode('/', $path)));
     }
 }
