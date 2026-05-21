@@ -22,7 +22,10 @@ abstract class ContentFinisher extends AbstractFinisher
     protected function buildContent(string $format): string
     {
         if($format === 'html') {
+            $request = $this->finisherContext->getRequest();
             $cObj = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+            $cObj->setRequest($request);
+            $cObj->start([], 'tt_content');
             $conf = [
                 'table' => 'tt_content',
                 'select.' => [
@@ -31,7 +34,7 @@ abstract class ContentFinisher extends AbstractFinisher
                 ]
             ];
             $htmlContent = $cObj->cObjGetSingle('CONTENT', $conf);
-            $baseUri = $this->finisherContext->getFormRuntime()->getRequest()->getAttribute('normalizedParams')->getSiteUrl();
+            $baseUri = $request->getAttribute('normalizedParams')->getSiteUrl();
             $htmlContent = str_replace('/fileadmin', $baseUri.'fileadmin', $htmlContent);
             return $this->replaceFormVariablesWithUserInputs($htmlContent);
         } else {
