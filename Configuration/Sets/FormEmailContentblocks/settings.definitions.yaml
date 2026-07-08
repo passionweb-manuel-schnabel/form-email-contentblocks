@@ -1,0 +1,23 @@
+categories:
+  formEmailContentblocks:
+    label: 'Form email content blocks'
+
+settings:
+  formEmailContentblocks.bgColor:
+    label: 'Default email background color'
+    description: 'Site-wide fallback background color for the fluid email template (hex, e.g. #ffffff). Applied when a form''s ExtendFluidEmail finisher leaves the background color empty.'
+    category: formEmailContentblocks
+    type: string
+    default: ''
+  formEmailContentblocks.logo:
+    label: 'Default email logo'
+    description: 'Site-wide fallback logo for the fluid email template. Accepts an EXT: path, a public URL, a FAL reference (t3://file?uid=…, file:…, or storage:uid) or a document-root-relative path. Applied when a form leaves the logo empty.'
+    category: formEmailContentblocks
+    type: string
+    default: ''
+  formEmailContentblocks.showCopyright:
+    label: 'Show copyright by default'
+    description: 'Site-wide default for the copyright note in the fluid email template. Applied when a form does not provide the showCopyright option.'
+    category: formEmailContentblocks
+    type: bool
+    default: false

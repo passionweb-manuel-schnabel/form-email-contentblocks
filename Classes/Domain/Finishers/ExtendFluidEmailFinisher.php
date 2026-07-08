@@ -10,6 +10,7 @@ use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Site\Entity\Site;
+use TYPO3\CMS\Core\Site\Entity\SiteSettings;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
@@ -19,15 +20,26 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
 {
     protected function executeInternal(): void
     {
+        $settings = $this->getSiteSettings();
+
+        // Per-form finisher options take precedence; the site set settings act as a
+        // site-wide fallback when a form leaves the respective option empty/unset.
         $bgColor = $this->options['bgColor'] ?? '';
+        if ($bgColor === '' && $settings !== null) {
+            $bgColor = (string)$settings->get('formEmailContentblocks.bgColor', '');
+        }
         if (ctype_xdigit(substr($bgColor, 1)) && (strlen($bgColor) === 4 || strlen($bgColor) === 7)) {
             $this->finisherContext->getFinisherVariableProvider()->add(
                 $this->shortFinisherIdentifier,
                 'backgroundColor',
-                $this->options['bgColor']
+                $bgColor
             );
         }
+
         $logoPath = $this->options['logo'] ?? '';
+        if ($logoPath === '' && $settings !== null) {
+            $logoPath = (string)$settings->get('formEmailContentblocks.logo', '');
+        }
         $absoluteLogoPath = $this->generateAbsolutePathOfFile($logoPath);
         if (!empty($absoluteLogoPath)) {
             $this->finisherContext->getFinisherVariableProvider()->add(
@@ -36,11 +48,25 @@ class ExtendFluidEmailFinisher extends AbstractFinisher
                 $absoluteLogoPath
             );
         }
+
+        $showCopyright = $this->options['showCopyright']
+            ?? ($settings !== null ? (bool)$settings->get('formEmailContentblocks.showCopyright', false) : false);
         $this->finisherContext->getFinisherVariableProvider()->add(
             $this->shortFinisherIdentifier,
             'showCopyright',
-            $this->options['showCopyright'] ?? false
+            $showCopyright
         );
+    }
+
+    /**
+     * Site settings of the current site (provided by the "Form email content blocks"
+     * site set), or null when no site is resolvable from the request.
+     */
+    private function getSiteSettings(): ?SiteSettings
+    {
+        $site = $this->finisherContext->getRequest()->getAttribute('site');
+
+        return $site instanceof Site ? $site->getSettings() : null;
     }
 
     private function generateAbsolutePathOfFile(string $logoPath): string

@@ -43,26 +43,41 @@ Following finishers are available:
 
  - `SignatureSenderFinisher` (Adds a content element at the end of the email to sender template)
 
- - `ExtendFluidEmailFinisher` (Edit the background color and logo (relative fileadmin paths and extension paths are possible) of the fluid email template for sender and receiver)
+ - `ExtendFluidEmailFinisher` (Edit the background color and logo of the fluid email template for sender and receiver. The logo accepts an extension path (`EXT:...`), a public URL, a FAL reference (`t3://file?uid=…`, `file:…` or `storage:uid`) or a document-root-relative path. Background color, logo and copyright can also be pre-set site-wide via the site set, see [Configuration](#configuration).)
 
 All previous finishers must be placed in front of the associated email finishers (`EmailToSender` or `EmailToReceiver`). Otherwise the corresponding content blocks are ignored. The same applies to the ExtendFluidEmailFinisher variables.
 
 For each finisher, the corresponding notes are also displayed in the header of the respective finisher.
 
-## Extension configuration (TypoScript)
+## Configuration
 
-All necessary configurations are read in using the `ExtensionManagementUtiltity:addTypoScript()` function within `ext_tables.php`.
+### Form configuration (automatic)
 
-```
-plugin.tx_form.settings.yamlConfigurations {
-    1673535916 = EXT:form_email_contentblocks/Configuration/Yaml/BaseSetup.yaml
-}
+As of TYPO3 v14, the form YAML configuration is registered automatically through the
+form framework's auto-discovery (`Configuration/Form/FormEmailContentblocks/config.yaml`),
+for both the frontend and the backend form editor. **No TypoScript setup is required.**
 
-module.tx_form.settings.yamlConfigurations {
-    1673535916 = EXT:form_email_contentblocks/Configuration/Yaml/BaseSetup.yaml
-    1673535917 = EXT:form_email_contentblocks/Configuration/Yaml/FormEditorSetup.yaml
-}
-```
+> The previous TypoScript registration via
+> `plugin.tx_form`/`module.tx_form.settings.yamlConfigurations` was deprecated in TYPO3
+> v14.2 ([#109412](https://docs.typo3.org/permalink/changelog:deprecation-109412-1732785703))
+> and removed here in favour of auto-discovery.
+
+### Site-wide defaults (site set)
+
+The extension ships a site set **`passionweb/form-email-contentblocks`** that exposes
+site-wide fallback defaults for the `ExtendFluidEmailFinisher`:
+
+| Setting | Type | Description |
+| --- | --- | --- |
+| `formEmailContentblocks.bgColor` | string | Fallback background color (hex, e.g. `#ffffff`) |
+| `formEmailContentblocks.logo` | string | Fallback logo (`EXT:` path, URL, FAL reference or root-relative path) |
+| `formEmailContentblocks.showCopyright` | bool | Default for the copyright note |
+
+Include the set in your site: **Site Management → Sites → your site → Sets → add
+"Form email content blocks"** (or add `passionweb/form-email-contentblocks` to the
+site's `dependencies` in `config/sites/<identifier>/config.yaml`). Per-form finisher
+options always take precedence; the site settings only apply when a form leaves the
+respective option empty. The site set is optional — the finishers work without it.
 
 ## How editors can/should use the extension
 
