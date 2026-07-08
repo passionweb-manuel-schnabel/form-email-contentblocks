@@ -7,7 +7,7 @@
  *
  * @var object
  */
-const finishersWithFieldExplanationText = [
+const finishersWithDescription = [
     'ExtendFluidEmail',
     'IntroductoryReceiver',
     'IntroductorySender',
@@ -49,50 +49,28 @@ function subscribeEvents(formEditorApp) {
      * @return void
      */
     getPublisherSubscriber(formEditorApp).subscribe('view/inspector/editor/insert/perform', function (topics, args) {
-        if (args[2] && args[3] && finishersWithFieldExplanationText.includes(args[2]) && args[3] === 'finishers') {
-            if (getUtility(formEditorApp).isNonEmptyString(args[0]['fieldExplanationText'])) {
-                const fieldExplanationElement = getHelper(formEditorApp)
-                    .getTemplatePropertyElement('fieldExplanationText', args[1]);
-                if (fieldExplanationElement) {
-                    fieldExplanationElement.textContent = args[0]['fieldExplanationText'];
+        if (args[2] && args[3] && finishersWithDescription.includes(args[2]) && args[3] === 'finishers') {
+            // Since TYPO3 v14 the former "fieldExplanationText" editor property was renamed
+            // to "description" (fieldExplanationText is deprecated and auto-migrated). The core
+            // header editor (Inspector-CollectionElementHeaderEditor) does not render the
+            // description itself, so we still populate it from our custom partial here.
+            if (getUtility(formEditorApp).isNonEmptyString(args[0]['description'])) {
+                const descriptionElement = getHelper(formEditorApp)
+                    .getTemplatePropertyElement('description', args[1]);
+                if (descriptionElement) {
+                    descriptionElement.textContent = args[0]['description'];
                 }
 
-                setTimeout(function() {
-                    const finisherElement = document.querySelector('div[data-finisher-identifier="'+args[2]+'"]');
-                    if (finisherElement) {
-                        const panelHeadingRow = finisherElement.querySelector('.panel-heading-row');
-
-                        let removeButtonElement = finisherElement.querySelector('.formeditor-inspector-element-remove-button');
-
-                        if (panelHeadingRow && removeButtonElement && !panelHeadingRow.querySelector('.panel-actions')) {
-                            const panelActionsDiv = document.createElement('div');
-                            panelActionsDiv.classList.add('panel-actions');
-
-                            const buttonElement = removeButtonElement.tagName === 'BUTTON' ? removeButtonElement : removeButtonElement.querySelector('button');
-                            if (buttonElement) {
-                                buttonElement.classList.add('btn-sm');
-                                const btnLabel = buttonElement.querySelector('.btn-label');
-                                if (btnLabel) {
-                                    btnLabel.classList.add('visually-hidden');
-                                }
-                                panelActionsDiv.appendChild(buttonElement);
-                                panelHeadingRow.appendChild(panelActionsDiv);
-
-                                if (removeButtonElement !== buttonElement) {
-                                    removeButtonElement.remove();
-                                }
-                            }
-                        }
-                        const hintElement = finisherElement.querySelector('.inspector-editor-hint');
-                        if (hintElement) {
-                            hintElement.style.display = 'flex';
-                        }
-                    }
-                }, 100);
-            } else {
-                getHelper(formEditorApp)
-                    .getTemplatePropertyElement('fieldExplanationText', args[1])
-                    ?.remove();
+                // The hint lives inside the rendered header editor (args[1]) and is hidden
+                // by default in the CollectionElementHeaderEditor partial. Reveal it here.
+                // Note: since TYPO3 v14 the collection element is no longer marked with a
+                // "data-finisher-identifier" attribute, so we must not rely on a global
+                // document lookup. Moving the remove button/building the collapse toggle is
+                // now handled by the core header editor, so no extra DOM surgery is needed.
+                const hintElement = args[1].querySelector('.inspector-editor-hint');
+                if (hintElement) {
+                    hintElement.style.display = 'flex';
+                }
             }
         }
     });
