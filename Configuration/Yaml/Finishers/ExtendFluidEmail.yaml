@@ -11,7 +11,7 @@ TYPO3:
                 predefinedDefaults:
                   options:
                     bgColor: ''
-                    logo: '',
+                    logo: ''
                     showCopyright: false
               FormEngine:
                 label: tt_content.finishersDefinition.ExtendFluidEmail.label
