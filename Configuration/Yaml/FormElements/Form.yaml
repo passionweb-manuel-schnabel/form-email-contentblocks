@@ -33,7 +33,7 @@ TYPO3:
                           identifier: header
                           templateName: Inspector-CollectionElementHeaderEditor
                           label: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.label
-                          description: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.fieldExplanationText
+                          fieldExplanationText: formEditor.elements.Form.finisher.IntroductoryReceiver.editor.header.fieldExplanationText
                         200:
                           identifier: contentElementUidHtml
                           templateName: Inspector-Typo3WinBrowserEditor
@@ -63,7 +63,7 @@ TYPO3:
                           identifier: header
                           templateName: Inspector-CollectionElementHeaderEditor
                           label: formEditor.elements.Form.finisher.IntroductorySender.editor.header.label
-                          description: formEditor.elements.Form.finisher.IntroductorySender.editor.header.fieldExplanationText
+                          fieldExplanationText: formEditor.elements.Form.finisher.IntroductorySender.editor.header.fieldExplanationText
                         200:
                           identifier: contentElementUidHtml
                           templateName: Inspector-Typo3WinBrowserEditor
@@ -93,7 +93,7 @@ TYPO3:
                           identifier: header
                           templateName: Inspector-CollectionElementHeaderEditor
                           label: formEditor.elements.Form.finisher.SignatureReceiver.editor.header.label
-                          description: formEditor.elements.Form.finisher.SignatureReceiver.editor.header.fieldExplanationText
+                          fieldExplanationText: formEditor.elements.Form.finisher.SignatureReceiver.editor.header.fieldExplanationText
                         200:
                           identifier: contentElementUidHtml
                           templateName: Inspector-Typo3WinBrowserEditor
@@ -123,7 +123,7 @@ TYPO3:
                           identifier: header
                           templateName: Inspector-CollectionElementHeaderEditor
                           label: formEditor.elements.Form.finisher.SignatureSender.editor.header.label
-                          description: formEditor.elements.Form.finisher.SignatureSender.editor.header.fieldExplanationText
+                          fieldExplanationText: formEditor.elements.Form.finisher.SignatureSender.editor.header.fieldExplanationText
                         200:
                           identifier: contentElementUidHtml
                           templateName: Inspector-Typo3WinBrowserEditor
@@ -153,19 +153,19 @@ TYPO3:
                           identifier: header
                           templateName: Inspector-CollectionElementHeaderEditor
                           label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.label
-                          description: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.fieldExplanationText
+                          fieldExplanationText: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.header.fieldExplanationText
                         200:
                           identifier: bgColor
                           templateName: Inspector-TextEditor
                           label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.label
                           propertyPath: options.bgColor
-                          description: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.fieldExplanationText
+                          fieldExplanationText: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.bgColor.fieldExplanationText
                         300:
                           identifier: logo
                           templateName: Inspector-TextEditor
                           label: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.label
                           propertyPath: options.logo
-                          description: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText
+                          fieldExplanationText: formEditor.elements.Form.finisher.ExtendFluidEmail.editor.logo.fieldExplanationText
                         400:
                           identifier: showCopyright
                           templateName: Inspector-CheckboxEditor

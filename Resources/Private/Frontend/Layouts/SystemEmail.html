@@ -331,7 +331,7 @@
     <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable"><tr><td align="center" valign="top" id="bodyCell">
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
 
-            <f:if condition="{finisherVariableProvider.ExtendFluidEmail && finisherVariableProvider.ExtendFluidEmail.backgroundColor}">
+            <f:if condition="{finisherVariableProvider.ExtendFluidEmail} && {finisherVariableProvider.ExtendFluidEmail.backgroundColor}">
                 <f:then>
                     <f:variable name="backgroundColor" value="{finisherVariableProvider.ExtendFluidEmail.backgroundColor}" />
                     <f:variable name="backgroundColorFooter" value="{finisherVariableProvider.ExtendFluidEmail.backgroundColor}" />
@@ -362,7 +362,7 @@
                                         <f:then>
                                             <img src="{finisherVariableProvider.ExtendFluidEmail.logo}" alt="{typo3.sitename} Logo" width="150" />
                                         </f:then>
-                                        <f:else if="{typo3.systemConfiguration.backend.loginHighlightColor}">
+                                        <f:else if="{typo3.systemConfiguration.backend.loginLogo}">
                                             <img src="{typo3.systemConfiguration.backend.loginLogo -> core:normalizedUrl()}" alt="TYPO3 Logo" height="41" width="150" />
                                         </f:else>
                                         <f:else if="{typo3.systemConfiguration.backend.loginHighlightColor}">
