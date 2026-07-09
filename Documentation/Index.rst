@@ -25,7 +25,7 @@ Extension Form email contentblocks
 		form,email,introduction,signature,content,finisher,fluidemail,extend
 
 	:Copyright:
-		2023
+		2026
 
 	:Author:
 		Manuel Schnabel

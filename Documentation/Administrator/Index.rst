@@ -24,18 +24,28 @@ Add via composer.json:
 
 - Flush TYPO3 and PHP Cache
 
-Extension configuration (TypoScript)
+Form configuration (automatic)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All necessary configurations are read in using the `ExtensionManagementUtiltity:addTypoScript()` function within `ext_tables.php`.
+As of TYPO3 v14 the form YAML configuration is registered automatically through the form
+framework's auto-discovery (``Configuration/Form/FormEmailContentblocks/config.yaml``), for
+both the frontend and the backend form editor. No TypoScript setup is required.
 
-.. code-block:: javascript
+The previous TypoScript registration via ``plugin.tx_form``/``module.tx_form.settings.yamlConfigurations``
+was deprecated in TYPO3 v14.2 (`#109412 <https://docs.typo3.org/permalink/changelog:deprecation-109412-1732785703>`_)
+and removed here in favour of auto-discovery.
 
-   plugin.tx_form.settings.yamlConfigurations {
-       1673535916 = EXT:form_email_contentblocks/Configuration/Yaml/BaseSetup.yaml
-   }
+Site-wide defaults (site set)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   module.tx_form.settings.yamlConfigurations {
-       1673535916 = EXT:form_email_contentblocks/Configuration/Yaml/BaseSetup.yaml
-       1673535917 = EXT:form_email_contentblocks/Configuration/Yaml/FormEditorSetup.yaml
-   }
+The extension ships a site set ``passionweb/form-email-contentblocks`` that exposes site-wide
+fallback defaults for the ``ExtendFluidEmailFinisher``:
+
+- ``formEmailContentblocks.bgColor`` – fallback background color (hex, e.g. ``#ffffff``)
+- ``formEmailContentblocks.logo`` – fallback logo (``EXT:`` path, URL, FAL reference or root-relative path)
+- ``formEmailContentblocks.showCopyright`` – default for the copyright note
+
+Include the set via :guilabel:`Site Management > Sites > (your site) > Sets` and add
+"Form email content blocks", or add ``passionweb/form-email-contentblocks`` to the site's
+``dependencies``. Per-form finisher options always take precedence; the site settings only
+apply when a form leaves the respective option empty. The site set is optional.

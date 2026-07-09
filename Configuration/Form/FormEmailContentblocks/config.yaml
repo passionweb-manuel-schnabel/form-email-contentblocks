@@ -1,0 +1,10 @@
+# Auto-discovered form configuration (TYPO3 v14.2+, replaces the deprecated
+# plugin.tx_form/module.tx_form.settings.yamlConfigurations TypoScript registration,
+# see Deprecation #109412). Picked up automatically for both frontend and backend.
+name: passionweb/form-email-contentblocks
+label: 'Form email content blocks'
+priority: 100
+
+imports:
+  - { resource: 'EXT:form_email_contentblocks/Configuration/Yaml/BaseSetup.yaml' }
+  - { resource: 'EXT:form_email_contentblocks/Configuration/Yaml/FormEditorSetup.yaml' }
